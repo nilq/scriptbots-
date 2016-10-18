@@ -23,15 +23,15 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config.h.in ${CMAKE_CURRENT_BINARY_DI
 include_directories(${CMAKE_CURRENT_BINARY_DIR} ${OPENGL_INCLUDE_DIRS} ${GLUT_INCLUDE_DIRS})
 
 set(SB2_STUFF
-
+    math.cpp
 )
 
-add_executables(scriptbots2 ${SB2_STUFF})
+add_executable(scriptbots2 ${SB2_STUFF})
 
 if (WIN32 AND NOT GLUT_FOUND)
-    target_link_libraries(scriptbots ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} ${GLUT32_LIBRARY})
+    target_link_libraries(scriptbots2 ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} ${GLUT32_LIBRARY})
 else()
-    target_link_libraries(scriptbots ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES})
+    target_link_libraries(scriptbots2 ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES})
 endif()
 
 if (MSVC AND WIN32 AND NOT GLUT_FOUND)
