@@ -1,5 +1,5 @@
-#ifndef HELPERS
-#define HELPERS
+#ifndef UTILITIES
+#define UTILITIES
 
 #include <stdlib.h>
 #include <math.h>
