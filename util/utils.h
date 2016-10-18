@@ -1,5 +1,5 @@
-#ifndef UTILITIES
-#define UTILITIES
+#ifndef UTILITIES_H
+#define UTILITIES_H
 
 #include <stdlib.h>
 #include <math.h>
@@ -13,7 +13,7 @@ inline float randi(int a, int b) {
 }
 
 inline double randn(double mu, double sigma) {
-    static bool shall_deviate   = false;
+    static bool shall_deviate = false;
     static float stored_deviate;
 
     double polar, r_squared, v1, v2;
@@ -32,7 +32,7 @@ inline double randn(double mu, double sigma) {
 
         } while(r_squared >= 1.0 || r_squared == 0);
 
-        polar = sqrt(-2.0 * log(r_squared) / r_squared)
+        polar = sqrt(-2.0 * log(r_squared) / r_squared);
 
         stored_deviate = v1 * polar;
         shall_deviate  = true;
