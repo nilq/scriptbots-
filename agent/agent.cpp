@@ -122,3 +122,26 @@ Agent Agent::reproduce(float mr, float mr2) {
 
     return baby;
 }
+
+Agent Agent::cross_over(const Agent &other) {
+    Agent baby;
+
+    baby.hybrid = true;
+    baby.gen_counter = this -> gen_counter;
+
+    if (other.gen_counter < baby.gen_counter) {
+        baby.gen_counter = other.gen_counter;
+    }
+
+    baby.clock_f1 = randf(0, 1) < 0.5 ? this -> clock_f1 : other.clock_f1;
+    baby.clock_f1 = randf(0, 1) < 0.5 ? this -> clock_f2 : other.clock_f2;
+
+    baby.herbivore = randf(0, 1) < 0.5 ? this -> herbivore : other.herbivore;
+
+    baby.mutrate1 = randf(0, 1) < 0.5 ? this -> mutrate1 : other.mutrate1;
+    baby.mutrate2 = randf(0, 1) < 0.5 ? this -> mutrate2 : other.mutrate2;
+
+    baby.brain = this -> brain.cross_over(other.brain);
+
+    return baby;
+}

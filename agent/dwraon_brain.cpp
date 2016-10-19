@@ -172,3 +172,21 @@ void DWRAONBrain::mutate(float mr, float mr2) {
         }
     }
 }
+
+DWRAONBrain DWRAONBrain::cross_over(const DWRAONBrain &other) {
+    DWRAONBrain new_brain(*this);
+
+    for (int i = 0; i < new_brain.boxes.size(); i++) {
+        new_brain.boxes[i].bias = randf(0, 1) < 0.5 ? this -> boxes[i].bias : other.boxes[i].bias;
+        new_brain.boxes[i].kp = randf(0, 1) < 0.5 ? this -> boxes[i].kp : other.boxes[i].kp;
+        new_brain.boxes[i].type = randf(0, 1) < 0.5 ? this -> boxes[i].type : other.boxes[i].type;
+
+        for (int j = 0; j < new_brain.boxes.size(); j++) {
+            new_brain.boxes[i].id[j] = randf(0, 1) < 0.5 ? this -> boxes[i].id[j] : other.boxes[i].id[j];
+            new_brain.boxes[i].notted[j] = randf(0, 1) < 0.5 ? this -> boxes[i].notted[j] : other.boxes[i].notted[j];
+            new_brain.boxes[i].w[j] = randf(0, 1) < 0.5 ? this -> boxes[i].w[j] : other.boxes[i].w[j];
+        }
+    }
+
+    return new_brain;
+}
