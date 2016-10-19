@@ -24,6 +24,7 @@ set(SB2_STUFF
     main.cpp
     agent/dwraon_brain.cpp
     agent/agent.cpp
+    world/world.cpp
     util/vmath.cpp
 )
 

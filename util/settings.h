@@ -20,6 +20,8 @@ namespace settings {
 
     const float REP_RATE = 7;
 
+    const int BABIES = 2;
+
     const float DIST = 150;
     const float EYE_SENS = 2;
     const float BLOOD_SENS = 0.002;
@@ -27,15 +29,14 @@ namespace settings {
     const float META_MUTRATE1 = 0.002;
     const float META_MUTRATE2 = 0.05;
 
-    const float FOOD_GROWTH = 0;
-
     const float FOOD_INTAKE   = 0.00325;
     const float FOOD_WASTE    = 0.001;
     const float FOOD_MAX      = 0.5;
-    const float FOOD_ADD_FREQ = 30;
+
+    const int FOOD_ADD_FREQ = 30;
 
     const float FOOD_TRANSFER = 0.001;
-    const float FOOD_SHARING_DISTANC = 50;
+    const float FOOD_SHARING_DISTANCE = 50;
 
     const float FOOD_DISTRIBUTION_RADIUS = 100;
 }
