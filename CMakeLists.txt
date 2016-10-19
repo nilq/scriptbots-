@@ -23,6 +23,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR} ${OPENGL_INCLUDE_DIRS} ${GLUT_IN
 set(SB2_STUFF
     main.cpp
     agent/dwraon_brain.cpp
+    agent/agent.cpp
     util/vmath.cpp
 )
 
