@@ -21,6 +21,8 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config.h.in ${CMAKE_CURRENT_BINARY_DI
 include_directories(${CMAKE_CURRENT_BINARY_DIR} ${OPENGL_INCLUDE_DIRS} ${GLUT_INCLUDE_DIRS})
 
 set(SB2_STUFF
+    world/view.h
+    world/gl_view.h
     main.cpp
     agent/dwraon_brain.cpp
     agent/agent.cpp

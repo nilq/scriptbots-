@@ -12,15 +12,15 @@
 #include <stdio.h>
 
 void gl_changeSize(int w, int h) {
-    GL_VIEW -> changeSize(w, h);
+    GLVIEW -> changeSize(w, h);
 }
 
 void gl_handleIdle() {
-    GL_VIEW -> handleIdle();
+    GLVIEW -> handleIdle();
 }
 
 void gl_renderScene() {
-    GL_VIEW -> renderScene();
+    GLVIEW -> renderScene();
 }
 
 void draw_text(float x, float y, void *font, const char *string, float r, float g, float b) {
@@ -107,4 +107,8 @@ void GLView::renderScene() {
 
     glPopMatrix();
     glutSwapBuffers();
+}
+
+void GLView::set_world(World *w) {
+    world = w;
 }

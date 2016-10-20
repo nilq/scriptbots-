@@ -6,7 +6,7 @@
 
 class GLView;
 
-extern GLView *GL_VIEW;
+extern GLView *GLVIEW;
 
 void gl_changeSize(int w, int h);
 void gl_handleIdle();
@@ -34,8 +34,6 @@ class GLView : public View {
         bool shall_draw;
 
         int speed;
-
-        bool draw_food;
 
         char buf[100];
         char buf2[10];
